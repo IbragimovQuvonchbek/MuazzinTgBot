@@ -1,5 +1,4 @@
 import asyncio
-from logging import exception
 
 import requests
 from aiogram import Bot
@@ -20,7 +19,7 @@ NOTIFICATION_TIMES = {
     time(4, 56): "Bomdod",
     time(11, 59): "Peshin",
     time(15, 51): "Asr",
-    time(12, 48): "Shom", #17:37
+    time(17, 37): "Shom",
     time(18, 50): "Xufton"
 }
 
@@ -38,7 +37,7 @@ async def send_notification(user_id, prayer_name, time):
 
 def fetch_users():
     try:
-        response = requests.get(f"{USER_API_URL}get-all-user-info")
+        response = requests.get(f"{USER_API_URL}")
         if response.status_code == 200:
             return response.json()
         else:
