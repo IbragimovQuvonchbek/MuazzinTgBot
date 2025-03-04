@@ -14,10 +14,9 @@ bot = Bot(token=TOKEN)
 USER_API_URL = environ.get("API_URL")
 UZBEKISTAN_TZ = pytz.timezone("Asia/Tashkent")
 
-# Prayer times with names (Uzbekistan time)
 NOTIFICATION_TIMES = {
     time(4, 56): "Bomdod",
-    time(6, 13): "Quyosh",
+    time(5, 28): "Quyosh", #6:13
     time(11, 59): "Peshin",
     time(15, 51): "Asr",
     time(17, 37): "Shom",
