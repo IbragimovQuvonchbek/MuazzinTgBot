@@ -16,7 +16,7 @@ UZBEKISTAN_TZ = pytz.timezone("Asia/Tashkent")
 
 NOTIFICATION_TIMES = {
     time(4, 56): "Bomdod",
-    time(5, 32): "Quyosh", #6:13
+    time(5, 41): "Quyosh", #6:13
     time(11, 59): "Peshin",
     time(15, 51): "Asr",
     time(17, 37): "Shom",
@@ -34,7 +34,7 @@ async def send_notification(user_id, prayer_name, time):
 
 def fetch_users():
     try:
-        response = requests.get(f"{USER_API_URL}api/v1/get-all-user-info/")
+        response = requests.get(f"{USER_API_URL}api/v1/get-all-user-info")
         if response.status_code == 200:
             return response.json()
         else:
