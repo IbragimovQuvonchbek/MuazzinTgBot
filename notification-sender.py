@@ -1,4 +1,6 @@
 import asyncio
+from logging import exception
+
 import requests
 from aiogram import Bot
 from datetime import datetime, time
@@ -16,7 +18,6 @@ UZBEKISTAN_TZ = pytz.timezone("Asia/Tashkent")
 
 NOTIFICATION_TIMES = {
     time(4, 56): "Bomdod",
-    time(5, 41): "Quyosh", #6:13
     time(11, 59): "Peshin",
     time(15, 51): "Asr",
     time(17, 37): "Shom",
@@ -28,13 +29,16 @@ last_sent_time = None
 
 async def send_notification(user_id, prayer_name, time):
     async with bot:
-        message = f"📢 *{prayer_name} {time}* namozi vaqti yetib keldi! Alloh qabul qilsin. 🤲"
-        await bot.send_message(user_id, message, parse_mode="Markdown")
+        try:
+            message = f"📢 *{prayer_name} {time}* namozi vaqti yetib kelyapti! Alloh qabul qilsin. 🤲"
+            await bot.send_message(user_id, message, parse_mode="Markdown")
+        except:
+            print("Error")
 
 
 def fetch_users():
     try:
-        response = requests.get(f"{USER_API_URL}api/v1/get-all-user-info")
+        response = requests.get(f"{USER_API_URL}get-all-user-info")
         if response.status_code == 200:
             return response.json()
         else:
