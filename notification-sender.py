@@ -16,7 +16,7 @@ UZBEKISTAN_TZ = pytz.timezone("Asia/Tashkent")
 
 NOTIFICATION_TIMES = {
     time(4, 56): "Bomdod",
-    time(5, 28): "Quyosh", #6:13
+    time(5, 32): "Quyosh", #6:13
     time(11, 59): "Peshin",
     time(15, 51): "Asr",
     time(17, 37): "Shom",
