@@ -63,7 +63,7 @@ async def check_and_send_notifications():
             last_sent_time = current_time
             print(f"✅ Sent '{prayer_name}' notifications at {now.strftime('%H:%M')} Uzbekistan Time")
 
-        await asyncio.sleep(30)
+        await asyncio.sleep(10)
 
 
 async def main():
