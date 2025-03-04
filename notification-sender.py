@@ -13,14 +13,14 @@ load_dotenv()
 TOKEN = environ.get("BOT_TOKEN")
 bot = Bot(token=TOKEN)
 
-USER_API_URL = environ.get("API_URL")
+USER_API_URL = environ.get("API_URL_FOR_USERS")
 UZBEKISTAN_TZ = pytz.timezone("Asia/Tashkent")
 
 NOTIFICATION_TIMES = {
     time(4, 56): "Bomdod",
     time(11, 59): "Peshin",
     time(15, 51): "Asr",
-    time(17, 37): "Shom",
+    time(12, 48): "Shom", #17:37
     time(18, 50): "Xufton"
 }
 
